@@ -2,6 +2,8 @@
 
 ## Step 1: Create new Droplet with user-data
 
+**user-data template:** [user-data](https://github.com/eggclub-org/sys-snippets/blob/master/01-Setup-new-server-in-DO/01-user-data-eggclub.sh)
+
 ![Create new Droplet with user-data](images/01-create-droplet-with-user-data.png)
 
 
