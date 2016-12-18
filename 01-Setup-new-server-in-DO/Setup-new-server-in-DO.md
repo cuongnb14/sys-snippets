@@ -81,9 +81,9 @@ sudo ufw allow in on docker0 to any port 1:65535 proto udp
 ```
 
 ### 3. Monit
-**Configure monit:**
+**Monit configure template:** [monitrc.tmpl.cfg](https://github.com/eggclub-org/sys-snippets/blob/master/01-Setup-new-server-in-DO/templates/monitrc.tmpl.cfg)
 
-Monit configure template: [monitrc.tmpl.cfg](https://github.com/eggclub-org/sys-snippets/blob/master/01-Setup-new-server-in-DO/templates/monitrc.tmpl.cfg)
+**Configure monit:**
 
 ```sh
 # Copy monit template
@@ -127,5 +127,29 @@ http://188.166.144.122:11180/
 ```
 user: monit
 pass: ke98gmcQru455Bykv2GR
+```
+
+## Step 4: Customize shell environments
+
+**Shell environments template:** [coc-config](https://www.dropbox.com/s/d5el6fkaqmlei1p/coc-config_20161218.tgz)
+
+- byobu config
+- git config
+- oh-my-zsh config
+- vim config
+
+**Install coc-config template:**
+
+```sh
+# Checksum:
+#
+# $ md5sum coc-config_20161218.tgz
+# 3ccbf559bc408368f47e622e2bf28c4e  coc-config_20161218.tgz
+#
+
+wget https://www.dropbox.com/s/d5el6fkaqmlei1p/coc-config_20161218.tgz -O /tmp/coc-config_20161218.tgz
+
+tar xzf /tmp/coc-config_20161218.tgz -C ~
+sudo mv ~/peco /usr/local/bin
 ```
 
