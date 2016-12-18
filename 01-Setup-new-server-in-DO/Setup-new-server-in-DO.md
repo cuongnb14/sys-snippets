@@ -83,13 +83,28 @@ sudo ufw allow in on docker0 to any port 1:65535 proto udp
 ### 3. Monit
 **Configure monit:**
 
+Monit configure template: [monitrc.tmpl.cfg](https://github.com/eggclub-org/sys-snippets/blob/master/01-Setup-new-server-in-DO/templates/monitrc.tmpl.cfg)
 ```sh
 # Copy monit template
-sudo cp monitrc_short-version_onfta.tmpl.cfg /etc/monit/monitrc
+sudo wget https://github.com/eggclub-org/sys-snippets/blob/master/01-Setup-new-server-in-DO/templates/monitrc.tmpl.cfg -O /etc/monit/monitrc
 
 # Configure monit
-# 1. Find and Replace: SERVER_NAME
-# 2. Check Services
+# 1. Configure Mail SMTP variables:
+#    - SENDMAIL@gmail.com
+#    - SENDMAIL_PASSWORD
+#
+# 2. Configure receive email:
+#    - ADMIN@gmail.com
+#
+# 3. Configure monit password:
+#    - MONIT_PASSWORD
+#
+# 4. Configure server name:
+#    - SERVER_NAME
+#
+# 5. Configure checking services:
+#    - Such as: Web, MySQL
+#
 sudo vi /etc/monit/monitrc
 ```
 
@@ -111,3 +126,4 @@ http://188.166.144.122:11180/
 user: monit
 pass: ke98gmcQru455Bykv2GR
 ```
+
